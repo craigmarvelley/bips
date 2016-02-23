@@ -11,6 +11,11 @@
 @interface StoryController : UIViewController
 
 @property (strong, nonatomic) NSDictionary *place;
+
 @property (weak, nonatomic) IBOutlet UILabel *placeNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *firstImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *secondImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *thirdImageView;
+@property (weak, nonatomic) IBOutlet UITextView *storyTextView;
 
 @end

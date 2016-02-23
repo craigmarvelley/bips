@@ -9,6 +9,12 @@
 		<integer>0</integer>
 		<key>y_coordinate</key>
 		<integer>0</integer>
+		<key>image1Name</key>
+		<string>Marco Cafe</string>
+		<key>image2Name</key>
+		<string>Beach</string>
+		<key>image3Name</key>
+		<string>Promenade</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -17,6 +23,12 @@
 		<integer>0</integer>
 		<key>y_coordinate</key>
 		<integer>0</integer>
+		<key>image1Name</key>
+		<string>Marco Cafe</string>
+		<key>image2Name</key>
+		<string>Beach</string>
+		<key>image3Name</key>
+		<string>Promenade</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -25,6 +37,12 @@
 		<integer>0</integer>
 		<key>y_coordinate</key>
 		<integer>0</integer>
+		<key>image1Name</key>
+		<string>Marco Cafe</string>
+		<key>image2Name</key>
+		<string>Beach</string>
+		<key>image3Name</key>
+		<string>Promenade</string>
 	</dict>
 </array>
 </plist>

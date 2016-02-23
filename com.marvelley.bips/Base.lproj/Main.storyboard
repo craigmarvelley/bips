@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Map Controller-->
@@ -50,7 +51,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-sN-ppN">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-sN-ppN" userLabel="Main stack view">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfW-H3-Sip">
@@ -78,16 +79,58 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will say the place name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raY-MO-JUr">
-                                        <rect key="frame" x="0.0" y="80" width="600" height="40"/>
+                                        <rect key="frame" x="0.0" y="80" width="600" height="100"/>
+                                        <color key="backgroundColor" red="0.63519457477710217" green="1" blue="0.9475415729262745" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="gbI-mp-mDI"/>
+                                            <constraint firstAttribute="height" constant="100" id="gbI-mp-mDI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16C-b0-ssb">
-                                        <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16C-b0-ssb" userLabel="Content stack view">
+                                        <rect key="frame" x="0.0" y="180" width="600" height="420"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C0D-lI-vYR" userLabel="Left padding view">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="420"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jvp-sM-wna">
+                                                <rect key="frame" x="30" y="0.0" width="270" height="420"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image1" translatesAutoresizingMaskIntoConstraints="NO" id="YQY-Fj-Slp" userLabel="Image 1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="140"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image2" translatesAutoresizingMaskIntoConstraints="NO" id="baB-Co-ttV" userLabel="Image 2">
+                                                        <rect key="frame" x="0.0" y="140" width="270" height="140"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image3" translatesAutoresizingMaskIntoConstraints="NO" id="cjY-bx-N8t" userLabel="Image 3">
+                                                        <rect key="frame" x="0.0" y="280" width="270" height="140"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="cjY-bx-N8t" firstAttribute="height" secondItem="Jvp-sM-wna" secondAttribute="height" multiplier="1:3" id="OOz-Tu-aUi"/>
+                                                    <constraint firstItem="YQY-Fj-Slp" firstAttribute="height" secondItem="Jvp-sM-wna" secondAttribute="height" multiplier="1:3" id="RBl-La-w7n"/>
+                                                    <constraint firstItem="baB-Co-ttV" firstAttribute="height" secondItem="Jvp-sM-wna" secondAttribute="height" multiplier="1:3" id="hyS-2G-zLQ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="This is where the story goes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3qU-Mj-Vc0">
+                                                <rect key="frame" x="300" y="0.0" width="270" height="420"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUF-xw-7Fl" userLabel="Right padding view">
+                                                <rect key="frame" x="570" y="0.0" width="30" height="420"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="C0D-lI-vYR" firstAttribute="width" secondItem="16C-b0-ssb" secondAttribute="width" multiplier="0.05" id="92V-iA-CUD"/>
+                                            <constraint firstItem="3qU-Mj-Vc0" firstAttribute="width" secondItem="16C-b0-ssb" secondAttribute="width" multiplier="0.45" id="edf-zf-5op"/>
+                                            <constraint firstItem="Jvp-sM-wna" firstAttribute="width" secondItem="16C-b0-ssb" secondAttribute="width" multiplier="0.45" id="gIG-SW-mvW"/>
+                                            <constraint firstItem="ZUF-xw-7Fl" firstAttribute="width" secondItem="16C-b0-ssb" secondAttribute="width" multiplier="0.05" id="pqz-RK-Ehh"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -102,7 +145,11 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="firstImageView" destination="YQY-Fj-Slp" id="jjj-Ns-MY4"/>
                         <outlet property="placeNameLabel" destination="raY-MO-JUr" id="gI3-Io-MWg"/>
+                        <outlet property="secondImageView" destination="baB-Co-ttV" id="fff-EK-2R4"/>
+                        <outlet property="storyTextView" destination="3qU-Mj-Vc0" id="qkA-9z-CtI"/>
+                        <outlet property="thirdImageView" destination="cjY-bx-N8t" id="cyn-a3-7Hm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAu-xh-1qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -112,6 +159,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Image1" width="640" height="404"/>
+        <image name="Image2" width="550" height="412"/>
+        <image name="Image3" width="420" height="279"/>
         <image name="Map" width="1024" height="768"/>
     </resources>
 </document>

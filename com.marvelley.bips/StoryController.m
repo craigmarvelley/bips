@@ -15,6 +15,10 @@
     [super viewDidLoad];
     
     self.placeNameLabel.text = self.place[@"name"];
+    
+    self.firstImageView.image = [UIImage imageNamed:self.place[@"image1Name"]];
+    self.secondImageView.image = [UIImage imageNamed:self.place[@"image2Name"]];
+    self.thirdImageView.image = [UIImage imageNamed:self.place[@"image3Name"]];
 }
 
 @end
