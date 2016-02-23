@@ -41,7 +41,7 @@
         <!--Story Controller-->
         <scene sceneID="pXi-2c-WSZ">
             <objects>
-                <viewController id="vje-wk-b2k" customClass="StoryController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="vje-wk-b2k" customClass="StoryController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G0V-g4-keU"/>
                         <viewControllerLayoutGuide type="bottom" id="F1Q-Vd-Rdb"/>
@@ -53,32 +53,54 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eC1-sN-ppN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfW-H3-Sip">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="CcT-Ak-R7N"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozB-pn-vAu">
+                                        <rect key="frame" x="0.0" y="20" width="600" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd1-Ax-DeL">
+                                                <rect key="frame" x="17" y="15" width="98" height="30"/>
+                                                <state key="normal" title="Return to Map"/>
+                                                <connections>
+                                                    <segue destination="iAG-qW-YxS" kind="unwind" unwindAction="unwindToMap:" id="7nw-NW-AIS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Yd1-Ax-DeL" firstAttribute="leading" secondItem="ozB-pn-vAu" secondAttribute="leading" constant="17" id="6Ic-vq-OAl"/>
+                                            <constraint firstItem="Yd1-Ax-DeL" firstAttribute="top" secondItem="ozB-pn-vAu" secondAttribute="top" constant="15" id="g7G-Ax-SOd"/>
+                                            <constraint firstAttribute="height" constant="60" id="qoo-hm-3ZZ"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This will say the place name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="raY-MO-JUr">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="0.0" y="80" width="600" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="gbI-mp-mDI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="16C-b0-ssb">
+                                        <rect key="frame" x="0.0" y="120" width="600" height="480"/>
+                                    </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yd1-Ax-DeL">
-                                <rect key="frame" x="488" y="20" width="98" height="30"/>
-                                <state key="normal" title="Return to Map"/>
-                                <connections>
-                                    <segue destination="iAG-qW-YxS" kind="unwind" unwindAction="unwindToMap:" id="7nw-NW-AIS"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eC1-sN-ppN" firstAttribute="leading" secondItem="scG-Bo-hTX" secondAttribute="leadingMargin" constant="-20" id="6xS-LX-XKN"/>
                             <constraint firstItem="eC1-sN-ppN" firstAttribute="top" secondItem="G0V-g4-keU" secondAttribute="bottom" constant="-20" id="UMM-TR-hNa"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yd1-Ax-DeL" secondAttribute="trailing" constant="-6" id="Ygv-Ij-lgf"/>
                             <constraint firstItem="eC1-sN-ppN" firstAttribute="height" secondItem="scG-Bo-hTX" secondAttribute="height" id="lm8-Ee-ukw"/>
                             <constraint firstItem="eC1-sN-ppN" firstAttribute="width" secondItem="scG-Bo-hTX" secondAttribute="width" id="lsG-MF-Jcb"/>
-                            <constraint firstItem="Yd1-Ax-DeL" firstAttribute="top" secondItem="G0V-g4-keU" secondAttribute="bottom" id="uOV-4L-8yT"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="placeNameLabel" destination="raY-MO-JUr" id="gI3-Io-MWg"/>
                     </connections>
